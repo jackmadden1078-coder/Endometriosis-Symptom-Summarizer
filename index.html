@@ -12,7 +12,6 @@
       --muted: #4b5563;
       --border: #d1d5db;
       --accent: #6d28d9;
-      --accent-soft: #f3e8ff;
       --danger: #991b1b;
       --warn: #92400e;
       --ok: #166534;
@@ -21,7 +20,6 @@
     }
 
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -43,7 +41,6 @@
       font-weight: 700;
       transition: top 0.2s ease;
     }
-
     .skip-link:focus,
     .skip-link:focus-visible {
       top: 12px;
@@ -65,13 +62,11 @@
       padding: 32px;
       margin-bottom: 24px;
     }
-
     .hero h1 {
       margin: 0 0 10px;
       font-size: clamp(1.9rem, 3vw, 2.8rem);
       line-height: 1.1;
     }
-
     .hero p {
       margin: 0;
       color: var(--muted);
@@ -97,7 +92,6 @@
       margin: 0 0 14px;
       font-size: 1.25rem;
     }
-
     .section-note {
       margin: 0 0 18px;
       color: var(--muted);
@@ -113,7 +107,6 @@
       color: #7f1d1d;
       border-radius: 14px;
     }
-
     .error-box ul {
       margin: 8px 0 0;
       padding-left: 20px;
@@ -127,12 +120,10 @@
       background: #fcfcff;
       scroll-margin-top: 24px;
     }
-
     .question-error {
       border: 2px solid var(--danger);
       background: #fff7f7;
     }
-
     .question legend {
       display: block;
       width: 100%;
@@ -140,7 +131,6 @@
       margin-bottom: 10px;
       padding: 0;
     }
-
     .question-help {
       margin: 0 0 10px;
       color: var(--muted);
@@ -151,7 +141,6 @@
       display: grid;
       gap: 8px;
     }
-
     .option {
       display: flex;
       align-items: center;
@@ -164,24 +153,20 @@
       transition: 0.15s ease;
       min-height: 48px;
     }
-
     .option:hover {
       border-color: var(--accent);
       background: #faf5ff;
     }
-
     .option:focus-within {
       outline: 3px solid var(--accent);
       outline-offset: 2px;
       border-color: var(--accent);
       background: #faf5ff;
     }
-
     .option input {
       margin: 0;
       accent-color: var(--accent);
     }
-
     button:focus-visible,
     input:focus-visible {
       outline: 3px solid var(--accent);
@@ -201,7 +186,6 @@
       border-radius: 14px;
       padding: 16px;
     }
-
     .summary-block {
       border: 1px solid var(--border);
       border-radius: 14px;
@@ -209,7 +193,6 @@
       margin-bottom: 14px;
       background: #fff;
     }
-
     .summary-block h3 {
       margin: 0 0 8px;
       font-size: 1rem;
@@ -223,7 +206,6 @@
       font-weight: 700;
       margin-top: 4px;
     }
-
     .badge.high { background: #fee2e2; color: var(--danger); }
     .badge.medium { background: #fef3c7; color: var(--warn); }
     .badge.low { background: #dcfce7; color: var(--ok); }
@@ -240,7 +222,6 @@
       gap: 10px;
       margin-top: 18px;
     }
-
     button {
       border: none;
       border-radius: 12px;
@@ -250,20 +231,16 @@
       transition: 0.15s ease;
       min-height: 48px;
     }
-
     .primary {
       background: var(--accent);
       color: white;
     }
-
     .primary:hover { filter: brightness(1.05); }
-
     .secondary {
       background: #f3f4f6;
       color: var(--text);
       border: 1px solid var(--border);
     }
-
     .secondary:hover { background: #e5e7eb; }
 
     .small {
@@ -271,40 +248,70 @@
       color: var(--muted);
       margin-top: 14px;
     }
-
     .footer-note {
       margin-top: 20px;
       font-size: 0.86rem;
       color: var(--muted);
     }
 
-    @media (max-width: 920px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+    #printContainer { display: none; }
+    .print-report {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111827;
+      line-height: 1.5;
+    }
+    .print-report h1 {
+      font-size: 24px;
+      margin: 0 0 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #111827;
+    }
+    .print-report h2 {
+      font-size: 18px;
+      margin: 24px 0 10px;
+    }
+    .print-report h3 {
+      font-size: 16px;
+      margin: 16px 0 8px;
+      text-decoration: underline;
+    }
+    .print-report .questions-list {
+      padding-left: 20px;
+    }
+    .print-report .questions-list li {
+      margin-bottom: 12px;
+      break-inside: avoid;
+    }
+    .print-report .summary-block {
+      border: none;
+      padding: 8px 0;
+      margin-bottom: 12px;
+      break-inside: avoid;
+    }
+    .print-report .badge {
+      display: inline-block;
+      margin: 4px 0 8px;
+      padding: 4px 8px;
+      border: 1px solid #9ca3af;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: transparent;
+      color: #111827;
+    }
 
-      .sticky {
-        position: static;
-      }
+    @media (max-width: 920px) {
+      .grid { grid-template-columns: 1fr; }
+      .sticky { position: static; }
     }
 
     @media print {
-      body {
-        background: white;
-      }
-
-      .hero,
-      .card {
-        box-shadow: none;
-      }
-
-      .actions,
-      .small,
-      .summary-placeholder,
-      .footer-note,
-      .skip-link,
-      .error-box {
+      body.printing-report > *:not(#printContainer) {
         display: none !important;
+      }
+      body.printing-report #printContainer {
+        display: block !important;
+        padding: 24px;
       }
     }
   </style>
@@ -331,140 +338,29 @@
             <ul id="formErrorList"></ul>
           </div>
 
-          <fieldset class="question"><legend>1. Pain during menstruation (period pain)?</legend><p class="question-help">Choose the option that best matches your usual experience.</p><div class="options">
-            <label class="option"><input type="radio" name="q1" value="0"> No</label>
-            <label class="option"><input type="radio" name="q1" value="1"> Mild</label>
-            <label class="option"><input type="radio" name="q1" value="2"> Moderate</label>
-            <label class="option"><input type="radio" name="q1" value="3"> Severe</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>2. Pelvic pain outside your period?</legend><p class="question-help">Include pain not limited to menstrual bleeding days.</p><div class="options">
-            <label class="option"><input type="radio" name="q2" value="0"> No</label>
-            <label class="option"><input type="radio" name="q2" value="1"> Occasional</label>
-            <label class="option"><input type="radio" name="q2" value="2"> Frequent</label>
-            <label class="option"><input type="radio" name="q2" value="3"> Constant</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>3. Pain during or after sex?</legend><div class="options">
-            <label class="option"><input type="radio" name="q3" value="0"> No</label>
-            <label class="option"><input type="radio" name="q3" value="1"> Mild</label>
-            <label class="option"><input type="radio" name="q3" value="2"> Moderate</label>
-            <label class="option"><input type="radio" name="q3" value="3"> Severe</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>4. Average pain level overall?</legend><div class="options">
-            <label class="option"><input type="radio" name="q4" value="1"> 0–3</label>
-            <label class="option"><input type="radio" name="q4" value="2"> 4–7</label>
-            <label class="option"><input type="radio" name="q4" value="3"> 8–10</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>5. Heavy or irregular bleeding?</legend><div class="options">
-            <label class="option"><input type="radio" name="q5" value="0"> No</label>
-            <label class="option"><input type="radio" name="q5" value="1"> Sometimes</label>
-            <label class="option"><input type="radio" name="q5" value="2"> Often</label>
-            <label class="option"><input type="radio" name="q5" value="3"> Always</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>6. Bleeding between periods?</legend><div class="options">
-            <label class="option"><input type="radio" name="q6" value="0"> No</label>
-            <label class="option"><input type="radio" name="q6" value="1"> Occasionally</label>
-            <label class="option"><input type="radio" name="q6" value="2"> Frequently</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>7. Digestive issues such as bloating, constipation, or diarrhea?</legend><div class="options">
-            <label class="option"><input type="radio" name="q7" value="0"> No</label>
-            <label class="option"><input type="radio" name="q7" value="1"> Mild</label>
-            <label class="option"><input type="radio" name="q7" value="2"> Moderate</label>
-            <label class="option"><input type="radio" name="q7" value="3"> Severe</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>8. Pain with bowel movements?</legend><div class="options">
-            <label class="option"><input type="radio" name="q8" value="0"> No</label>
-            <label class="option"><input type="radio" name="q8" value="1"> Occasionally</label>
-            <label class="option"><input type="radio" name="q8" value="2"> Frequently</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>9. Pain during urination?</legend><div class="options">
-            <label class="option"><input type="radio" name="q9" value="0"> No</label>
-            <label class="option"><input type="radio" name="q9" value="1"> Occasionally</label>
-            <label class="option"><input type="radio" name="q9" value="2"> Frequently</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>10. Persistent fatigue or weakness?</legend><div class="options">
-            <label class="option"><input type="radio" name="q10" value="0"> No</label>
-            <label class="option"><input type="radio" name="q10" value="1"> Mild</label>
-            <label class="option"><input type="radio" name="q10" value="2"> Moderate</label>
-            <label class="option"><input type="radio" name="q10" value="3"> Severe</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>11. Do symptoms worsen around your period?</legend><div class="options">
-            <label class="option"><input type="radio" name="q11" value="0"> No</label>
-            <label class="option"><input type="radio" name="q11" value="1"> Slightly</label>
-            <label class="option"><input type="radio" name="q11" value="2"> Significantly</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>12. Do you experience severe cramping?</legend><div class="options">
-            <label class="option"><input type="radio" name="q12" value="0"> No</label>
-            <label class="option"><input type="radio" name="q12" value="1"> Mild</label>
-            <label class="option"><input type="radio" name="q12" value="2"> Moderate</label>
-            <label class="option"><input type="radio" name="q12" value="3"> Severe</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>13. Have symptoms changed over time?</legend><div class="options">
-            <label class="option"><input type="radio" name="q13" value="0"> Stayed the same</label>
-            <label class="option"><input type="radio" name="q13" value="2"> Worsened</label>
-            <label class="option"><input type="radio" name="q13" value="-1"> Improved</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>14. Duration of symptoms?</legend><div class="options">
-            <label class="option"><input type="radio" name="q14" value="0"> Less than 1 year</label>
-            <label class="option"><input type="radio" name="q14" value="1"> 1–3 years</label>
-            <label class="option"><input type="radio" name="q14" value="2"> 3–7 years</label>
-            <label class="option"><input type="radio" name="q14" value="3"> 7+ years</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>15. Feeling down, depressed, or hopeless?</legend><div class="options">
-            <label class="option"><input type="radio" name="q15" value="0"> No</label>
-            <label class="option"><input type="radio" name="q15" value="1"> Occasionally</label>
-            <label class="option"><input type="radio" name="q15" value="2"> Frequently</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>16. Anxiety related to symptoms?</legend><div class="options">
-            <label class="option"><input type="radio" name="q16" value="0"> No</label>
-            <label class="option"><input type="radio" name="q16" value="1"> Mild</label>
-            <label class="option"><input type="radio" name="q16" value="2"> Moderate</label>
-            <label class="option"><input type="radio" name="q16" value="3"> Severe</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>17. Impact on work or school?</legend><div class="options">
-            <label class="option"><input type="radio" name="q17" value="0"> Rarely</label>
-            <label class="option"><input type="radio" name="q17" value="1"> Sometimes</label>
-            <label class="option"><input type="radio" name="q17" value="2"> Often</label>
-            <label class="option"><input type="radio" name="q17" value="3"> Almost always</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>18. Impact on social life?</legend><div class="options">
-            <label class="option"><input type="radio" name="q18" value="0"> Rarely</label>
-            <label class="option"><input type="radio" name="q18" value="1"> Sometimes</label>
-            <label class="option"><input type="radio" name="q18" value="2"> Often</label>
-            <label class="option"><input type="radio" name="q18" value="3"> Almost always</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>19. Do symptoms affect physical activity?</legend><div class="options">
-            <label class="option"><input type="radio" name="q19" value="0"> No</label>
-            <label class="option"><input type="radio" name="q19" value="1"> Slightly</label>
-            <label class="option"><input type="radio" name="q19" value="2"> Moderately</label>
-            <label class="option"><input type="radio" name="q19" value="3"> Severely</label>
-          </div></fieldset>
-
-          <fieldset class="question"><legend>20. Do symptoms interfere with sleep?</legend><div class="options">
-            <label class="option"><input type="radio" name="q20" value="0"> No</label>
-            <label class="option"><input type="radio" name="q20" value="1"> Occasionally</label>
-            <label class="option"><input type="radio" name="q20" value="2"> Frequently</label>
-          </div></fieldset>
+          <fieldset class="question"><legend>1. Pain during menstruation (period pain)?</legend><p class="question-help">Choose the option that best matches your usual experience.</p><div class="options"><label class="option"><input type="radio" name="q1" value="0"> No</label><label class="option"><input type="radio" name="q1" value="1"> Mild</label><label class="option"><input type="radio" name="q1" value="2"> Moderate</label><label class="option"><input type="radio" name="q1" value="3"> Severe</label></div></fieldset>
+          <fieldset class="question"><legend>2. Pelvic pain outside your period?</legend><p class="question-help">Include pain not limited to menstrual bleeding days.</p><div class="options"><label class="option"><input type="radio" name="q2" value="0"> No</label><label class="option"><input type="radio" name="q2" value="1"> Occasional</label><label class="option"><input type="radio" name="q2" value="2"> Frequent</label><label class="option"><input type="radio" name="q2" value="3"> Constant</label></div></fieldset>
+          <fieldset class="question"><legend>3. Pain during or after sex?</legend><div class="options"><label class="option"><input type="radio" name="q3" value="0"> No</label><label class="option"><input type="radio" name="q3" value="1"> Mild</label><label class="option"><input type="radio" name="q3" value="2"> Moderate</label><label class="option"><input type="radio" name="q3" value="3"> Severe</label></div></fieldset>
+          <fieldset class="question"><legend>4. Average pain level overall?</legend><div class="options"><label class="option"><input type="radio" name="q4" value="1"> 0–3</label><label class="option"><input type="radio" name="q4" value="2"> 4–7</label><label class="option"><input type="radio" name="q4" value="3"> 8–10</label></div></fieldset>
+          <fieldset class="question"><legend>5. Heavy or irregular bleeding?</legend><div class="options"><label class="option"><input type="radio" name="q5" value="0"> No</label><label class="option"><input type="radio" name="q5" value="1"> Sometimes</label><label class="option"><input type="radio" name="q5" value="2"> Often</label><label class="option"><input type="radio" name="q5" value="3"> Always</label></div></fieldset>
+          <fieldset class="question"><legend>6. Bleeding between periods?</legend><div class="options"><label class="option"><input type="radio" name="q6" value="0"> No</label><label class="option"><input type="radio" name="q6" value="1"> Occasionally</label><label class="option"><input type="radio" name="q6" value="2"> Frequently</label></div></fieldset>
+          <fieldset class="question"><legend>7. Digestive issues such as bloating, constipation, or diarrhea?</legend><div class="options"><label class="option"><input type="radio" name="q7" value="0"> No</label><label class="option"><input type="radio" name="q7" value="1"> Mild</label><label class="option"><input type="radio" name="q7" value="2"> Moderate</label><label class="option"><input type="radio" name="q7" value="3"> Severe</label></div></fieldset>
+          <fieldset class="question"><legend>8. Pain with bowel movements?</legend><div class="options"><label class="option"><input type="radio" name="q8" value="0"> No</label><label class="option"><input type="radio" name="q8" value="1"> Occasionally</label><label class="option"><input type="radio" name="q8" value="2"> Frequently</label></div></fieldset>
+          <fieldset class="question"><legend>9. Pain during urination?</legend><div class="options"><label class="option"><input type="radio" name="q9" value="0"> No</label><label class="option"><input type="radio" name="q9" value="1"> Occasionally</label><label class="option"><input type="radio" name="q9" value="2"> Frequently</label></div></fieldset>
+          <fieldset class="question"><legend>10. Persistent fatigue or weakness?</legend><div class="options"><label class="option"><input type="radio" name="q10" value="0"> No</label><label class="option"><input type="radio" name="q10" value="1"> Mild</label><label class="option"><input type="radio" name="q10" value="2"> Moderate</label><label class="option"><input type="radio" name="q10" value="3"> Severe</label></div></fieldset>
+          <fieldset class="question"><legend>11. Do symptoms worsen around your period?</legend><div class="options"><label class="option"><input type="radio" name="q11" value="0"> No</label><label class="option"><input type="radio" name="q11" value="1"> Slightly</label><label class="option"><input type="radio" name="q11" value="2"> Significantly</label></div></fieldset>
+          <fieldset class="question"><legend>12. Do you experience severe cramping?</legend><div class="options"><label class="option"><input type="radio" name="q12" value="0"> No</label><label class="option"><input type="radio" name="q12" value="1"> Mild</label><label class="option"><input type="radio" name="q12" value="2"> Moderate</label><label class="option"><input type="radio" name="q12" value="3"> Severe</label></div></fieldset>
+          <fieldset class="question"><legend>13. Have your main symptoms changed over time? (Examples: period pain, pelvic pain, pain during or after sex, bleeding changes, digestive symptoms, bowel pain, urination pain, fatigue, or cramping)</legend><div class="options"><label class="option"><input type="radio" name="q13" value="0"> Stayed the same</label><label class="option"><input type="radio" name="q13" value="2"> Worsened</label><label class="option"><input type="radio" name="q13" value="-1"> Improved</label></div></fieldset>
+          <fieldset class="question"><legend>14. Duration of symptoms?</legend><div class="options"><label class="option"><input type="radio" name="q14" value="0"> Less than 1 year</label><label class="option"><input type="radio" name="q14" value="1"> 1–3 years</label><label class="option"><input type="radio" name="q14" value="2"> 3–7 years</label><label class="option"><input type="radio" name="q14" value="3"> 7+ years</label></div></fieldset>
+          <fieldset class="question"><legend>15. Feeling down, depressed, or hopeless?</legend><div class="options"><label class="option"><input type="radio" name="q15" value="0"> No</label><label class="option"><input type="radio" name="q15" value="1"> Occasionally</label><label class="option"><input type="radio" name="q15" value="2"> Frequently</label></div></fieldset>
+          <fieldset class="question"><legend>16. Anxiety related to symptoms?</legend><div class="options"><label class="option"><input type="radio" name="q16" value="0"> No</label><label class="option"><input type="radio" name="q16" value="1"> Mild</label><label class="option"><input type="radio" name="q16" value="2"> Moderate</label><label class="option"><input type="radio" name="q16" value="3"> Severe</label></div></fieldset>
+          <fieldset class="question"><legend>17. Impact on work or school?</legend><div class="options"><label class="option"><input type="radio" name="q17" value="0"> Rarely</label><label class="option"><input type="radio" name="q17" value="1"> Sometimes</label><label class="option"><input type="radio" name="q17" value="2"> Often</label><label class="option"><input type="radio" name="q17" value="3"> Almost always</label></div></fieldset>
+          <fieldset class="question"><legend>18. Impact on social life?</legend><div class="options"><label class="option"><input type="radio" name="q18" value="0"> Rarely</label><label class="option"><input type="radio" name="q18" value="1"> Sometimes</label><label class="option"><input type="radio" name="q18" value="2"> Often</label><label class="option"><input type="radio" name="q18" value="3"> Almost always</label></div></fieldset>
+          <fieldset class="question"><legend>19. Do symptoms affect physical activity?</legend><div class="options"><label class="option"><input type="radio" name="q19" value="0"> No</label><label class="option"><input type="radio" name="q19" value="1"> Slightly</label><label class="option"><input type="radio" name="q19" value="2"> Moderately</label><label class="option"><input type="radio" name="q19" value="3"> Severely</label></div></fieldset>
+          <fieldset class="question"><legend>20. Do symptoms interfere with sleep?</legend><div class="options"><label class="option"><input type="radio" name="q20" value="0"> No</label><label class="option"><input type="radio" name="q20" value="1"> Occasionally</label><label class="option"><input type="radio" name="q20" value="2"> Frequently</label></div></fieldset>
 
           <div class="actions">
-            <button type="submit" class="primary">Generate Summary</button>
+            <button type="submit" class="primary" id="generateBtn">Generate Summary</button>
             <button type="button" class="secondary" id="resetBtn">Reset</button>
             <button type="button" class="secondary" id="printBtn">Print or Save PDF</button>
           </div>
@@ -475,16 +371,14 @@
 
       <aside class="card sticky" aria-labelledby="summaryHeading">
         <h2 class="section-title" id="summaryHeading">Doctor-Ready Summary</h2>
-        <div id="summaryPlaceholder" class="summary-placeholder">
-          Complete the questionnaire and select <strong>Generate Summary</strong> to create a structured report.
-        </div>
+        <div id="summaryPlaceholder" class="summary-placeholder">Complete the questionnaire and select <strong>Generate Summary</strong> to create a structured report.</div>
         <div id="summaryOutput" aria-live="polite" style="display:none;"></div>
-        <p class="footer-note">
-          This page uses clear language, keyboard-friendly controls, visible focus states, structured headings, and form error guidance to support accessibility.
-        </p>
+        <p class="footer-note">This page uses clear language, keyboard-friendly controls, visible focus states, structured headings, and form error guidance to support accessibility.</p>
       </aside>
     </div>
   </div>
+
+  <div id="printContainer" aria-hidden="true"></div>
 
   <script>
     const form = document.getElementById('quizForm');
@@ -494,6 +388,7 @@
     const printBtn = document.getElementById('printBtn');
     const formErrorBox = document.getElementById('formErrorBox');
     const formErrorList = document.getElementById('formErrorList');
+    const printContainer = document.getElementById('printContainer');
 
     function getVal(name) {
       const checked = document.querySelector(`input[name="${name}"]:checked`);
@@ -511,12 +406,8 @@
     }
 
     function suspicionLabel(triadCount, avgPain, systemicCount, impactScore) {
-      if ((triadCount >= 1 && avgPain >= 2) || (triadCount >= 2 && impactScore >= 4) || (triadCount >= 1 && systemicCount >= 2)) {
-        return { text: 'High suspicion pattern', cls: 'high' };
-      }
-      if (triadCount >= 1 || systemicCount >= 2 || impactScore >= 2) {
-        return { text: 'Moderate suspicion pattern', cls: 'medium' };
-      }
+      if ((triadCount >= 1 && avgPain >= 2) || (triadCount >= 2 && impactScore >= 4) || (triadCount >= 1 && systemicCount >= 2)) return { text: 'High suspicion pattern', cls: 'high' };
+      if (triadCount >= 1 || systemicCount >= 2 || impactScore >= 2) return { text: 'Moderate suspicion pattern', cls: 'medium' };
       return { text: 'Lower suspicion pattern', cls: 'low' };
     }
 
@@ -530,42 +421,18 @@
       const cramps = data.q12;
 
       if (sexPain >= 2 && bleeding >= 2 && bowel >= 1 && urinary >= 1 && digestive >= 2 && worsened && cramps >= 2) {
-        return {
-          name: 'Severe multi-system and progressive pattern',
-          cls: 'high',
-          detail: 'Strong overlap of sexual pain, bleeding, bowel symptoms, urinary symptoms, digestive symptoms, severe cramps, and worsening over time.'
-        };
+        return { name: 'Severe multi-system and progressive pattern', cls: 'high', detail: 'Strong overlap of sexual pain, bleeding, bowel symptoms, urinary symptoms, digestive symptoms, severe cramps, and worsening over time.' };
       }
-
       if (sexPain >= 1 && bowel >= 1 && digestive >= 2 && cramps >= 2 && bleeding >= 1 && !worsened) {
-        return {
-          name: 'High symptom and less progressive pattern',
-          cls: 'medium',
-          detail: 'High symptom burden with cramping, digestive, bowel, and sexual pain features, but less obvious worsening over time.'
-        };
+        return { name: 'High symptom and less progressive pattern', cls: 'medium', detail: 'High symptom burden with cramping, digestive, bowel, and sexual pain features, but less obvious worsening over time.' };
       }
-
       if (digestive >= 2 && sexPain === 0 && (data.q1 >= 1 || data.q2 >= 1 || bowel >= 1)) {
-        return {
-          name: 'Digestive-dominant pattern',
-          cls: 'info',
-          detail: 'Digestive symptoms stand out more than sexual pain, with moderate pain features elsewhere.'
-        };
+        return { name: 'Digestive-dominant pattern', cls: 'info', detail: 'Digestive symptoms stand out more than sexual pain, with moderate pain features elsewhere.' };
       }
-
       if (sexPain >= 2 && digestive <= 1 && bowel <= 1 && urinary === 0) {
-        return {
-          name: 'Pain-dominant and sexual-pain focused pattern',
-          cls: 'info',
-          detail: 'Pain during or after sex is the most prominent feature, with fewer multi-system symptoms.'
-        };
+        return { name: 'Pain-dominant and sexual-pain focused pattern', cls: 'info', detail: 'Pain during or after sex is the most prominent feature, with fewer multi-system symptoms.' };
       }
-
-      return {
-        name: 'Mixed symptom pattern',
-        cls: 'medium',
-        detail: 'Symptoms do not map strongly to a single cluster and may represent a mixed presentation.'
-      };
+      return { name: 'Mixed symptom pattern', cls: 'medium', detail: 'Symptoms do not map strongly to a single cluster and may represent a mixed presentation.' };
     }
 
     function progressionLabel(q13) {
@@ -575,22 +442,92 @@
     }
 
     function mentalHealthLabel(dep, anx) {
-      if (dep >= 2 || anx >= 2) {
-        return { text: 'Elevated mental health impact', cls: 'high' };
-      }
-      if (dep >= 1 || anx >= 1) {
-        return { text: 'Some mental health impact', cls: 'medium' };
-      }
+      if (dep >= 2 || anx >= 2) return { text: 'Elevated mental health impact', cls: 'high' };
+      if (dep >= 1 || anx >= 1) return { text: 'Some mental health impact', cls: 'medium' };
       return { text: 'Low reported mental health impact', cls: 'low' };
+    }
+
+    function buildSummary(data) {
+      const triadCount = [data.q1, data.q2, data.q3].filter(v => v > 0).length;
+      const avgPain = data.q4;
+      const systemicCount = [data.q7, data.q8, data.q9, data.q10].filter(v => v > 0).length;
+      const impactScore = data.q17 + data.q18 + data.q19 + data.q20;
+      const suspicion = suspicionLabel(triadCount, avgPain, systemicCount, impactScore);
+      const cluster = detectCluster(data);
+      const mh = mentalHealthLabel(data.q15, data.q16);
+      const functionalImpactText = impactScore >= 7 ? 'Major functional impact reported' : impactScore >= 3 ? 'Moderate functional impact reported' : 'Limited functional impact reported';
+      const progressionNote = data.q13 === 2 ? 'Reported worsening supports a progressive pattern, although progression in endometriosis can be variable and is not required for concern.' : 'Lack of worsening does not rule out disease, since symptoms may remain stable over time.';
+
+      return `
+        <section class="summary-block">
+          <h3>1. Overall Pattern Analysis</h3>
+          ${badge(suspicion.text, suspicion.cls)}
+          <p>The response pattern shows <strong>${triadCount}</strong> of the 3 core pain features commonly associated with endometriosis-like presentations: period pain, pelvic pain outside menstruation, and pain during or after sex. The reported overall pain burden falls in the <strong>${severityLabel(avgPain).toLowerCase()}</strong> range, which suggests that pain is not isolated to a minor or occasional complaint.</p>
+          <p>Analytically, this means the questionnaire is picking up a symptom pattern with both <strong>pain breadth</strong> (how many major pain domains are involved) and <strong>pain intensity</strong> (how strong the pain is when present). When both are elevated, the pattern becomes more clinically notable.</p>
+        </section>
+        <section class="summary-block">
+          <h3>2. Cluster Interpretation</h3>
+          ${badge(cluster.name, cluster.cls)}
+          <p>${cluster.detail}</p>
+          <p>This cluster result does not diagnose disease subtype, but it helps identify <strong>which symptom profile the patient most resembles</strong>. That can help a clinician quickly see whether the presentation is more pain-centered, more digestive/systemic, or more multi-system and progressive.</p>
+        </section>
+        <section class="summary-block">
+          <h3>3. Symptom Distribution Analysis</h3>
+          <ul class="score-list">
+            <li><strong>Period pain:</strong> ${['No', 'Mild', 'Moderate', 'Severe'][data.q1]}</li>
+            <li><strong>Pelvic pain outside period:</strong> ${['No', 'Occasional', 'Frequent', 'Constant'][data.q2]}</li>
+            <li><strong>Pain during or after sex:</strong> ${['No', 'Mild', 'Moderate', 'Severe'][data.q3]}</li>
+            <li><strong>Heavy or irregular bleeding:</strong> ${['No', 'Sometimes', 'Often', 'Always'][data.q5]}</li>
+            <li><strong>Bleeding between periods:</strong> ${['No', 'Occasionally', 'Frequently'][data.q6]}</li>
+            <li><strong>Digestive symptoms:</strong> ${['No', 'Mild', 'Moderate', 'Severe'][data.q7]}</li>
+            <li><strong>Bowel pain:</strong> ${['No', 'Occasionally', 'Frequently'][data.q8]}</li>
+            <li><strong>Urination pain:</strong> ${['No', 'Occasionally', 'Frequently'][data.q9]}</li>
+            <li><strong>Fatigue or weakness:</strong> ${['No', 'Mild', 'Moderate', 'Severe'][data.q10]}</li>
+            <li><strong>Symptoms worsen around period:</strong> ${['No', 'Slightly', 'Significantly'][data.q11]}</li>
+            <li><strong>Cramping severity:</strong> ${['No', 'Mild', 'Moderate', 'Severe'][data.q12]}</li>
+          </ul>
+          <p>This distribution helps separate whether the presentation is mainly confined to menstruation, extends beyond the menstrual cycle, or involves multiple organ systems. A broader spread across pain, bleeding, digestive, urinary, and fatigue-related symptoms suggests a more complex overall burden.</p>
+        </section>
+        <section class="summary-block">
+          <h3>4. Progression Analysis</h3>
+          ${badge(progressionLabel(data.q13), 'info')}
+          <p><strong>Symptom duration:</strong> ${['Less than 1 year', '1–3 years', '3–7 years', '7+ years'][data.q14]}</p>
+          <p>${progressionNote}</p>
+          <p>Clinically, progression should be interpreted cautiously. Worsening symptoms may increase concern for accumulating burden, but stable symptoms do <strong>not</strong> rule out clinically meaningful disease. The time course is therefore informative, but not decisive by itself.</p>
+        </section>
+        <section class="summary-block">
+          <h3>5. Functional Impact Analysis</h3>
+          ${badge(functionalImpactText, impactScore >= 7 ? 'high' : impactScore >= 3 ? 'medium' : 'low')}
+          <ul class="score-list">
+            <li><strong>Impact on work or school:</strong> ${['Rarely', 'Sometimes', 'Often', 'Almost always'][data.q17]}</li>
+            <li><strong>Impact on social life:</strong> ${['Rarely', 'Sometimes', 'Often', 'Almost always'][data.q18]}</li>
+            <li><strong>Impact on physical activity:</strong> ${['No', 'Slightly', 'Moderately', 'Severely'][data.q19]}</li>
+            <li><strong>Sleep interference:</strong> ${['No', 'Occasionally', 'Frequently'][data.q20]}</li>
+          </ul>
+          <p>This section estimates how much the symptoms are affecting day-to-day life rather than only whether symptoms exist. Higher impairment across work, activity, social function, and sleep suggests that the symptom burden is not only present, but functionally significant.</p>
+        </section>
+        <section class="summary-block">
+          <h3>6. Mental Health Impact Analysis</h3>
+          ${badge(mh.text, mh.cls)}
+          <ul class="score-list">
+            <li><strong>Feeling down, depressed, or hopeless:</strong> ${['No', 'Occasionally', 'Frequently'][data.q15]}</li>
+            <li><strong>Anxiety related to symptoms:</strong> ${['No', 'Mild', 'Moderate', 'Severe'][data.q16]}</li>
+          </ul>
+          <p>These responses suggest how strongly the symptom experience may be overlapping with emotional burden. Even though this tool is not a mental health assessment, elevated responses here may signal that the condition is affecting overall well-being and may deserve discussion during clinical review.</p>
+        </section>
+        <section class="summary-block">
+          <h3>7. Integrated Clinical Interpretation</h3>
+          <p>Overall, this questionnaire shows a <strong>${suspicion.text.toLowerCase()}</strong> for an endometriosis-like symptom pattern. The responses are most consistent with a <strong>${cluster.name.toLowerCase()}</strong>, with the strongest concerns coming from the combination of pain pattern, associated system involvement, and the reported level of functional disruption.</p>
+          <p>In practical terms, the most clinically relevant question is not only whether symptoms are present, but <strong>how they combine</strong>: whether they are cyclical, whether they extend beyond menstruation, whether multiple systems are involved, and whether they are disrupting normal life. This summary is intended to support that more detailed clinical conversation rather than provide a diagnosis.</p>
+        </section>
+      `;
     }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-
       const data = {};
       const missing = [];
-      const questions = document.querySelectorAll('.question');
-      questions.forEach(q => q.classList.remove('question-error'));
+      document.querySelectorAll('.question').forEach(q => q.classList.remove('question-error'));
       formErrorList.innerHTML = '';
       formErrorBox.style.display = 'none';
 
@@ -621,89 +558,9 @@
         return;
       }
 
-      const triadCount = [data.q1, data.q2, data.q3].filter(v => v > 0).length;
-      const avgPain = data.q4;
-      const systemicCount = [data.q7, data.q8, data.q9, data.q10].filter(v => v > 0).length;
-      const impactScore = data.q17 + data.q18 + data.q19 + data.q20;
-      const suspicion = suspicionLabel(triadCount, avgPain, systemicCount, impactScore);
-      const cluster = detectCluster(data);
-      const mh = mentalHealthLabel(data.q15, data.q16);
-
-      const functionalImpactText = impactScore >= 7
-        ? 'Major functional impact reported'
-        : impactScore >= 3
-          ? 'Moderate functional impact reported'
-          : 'Limited functional impact reported';
-
-      const progressionNote = data.q13 === 2
-        ? 'Reported worsening supports a progressive pattern, although progression in endometriosis can be variable and is not required for concern.'
-        : 'Lack of worsening does not rule out disease, since symptoms may remain stable over time.';
-
+      summaryOutput.innerHTML = buildSummary(data);
       summaryPlaceholder.style.display = 'none';
       summaryOutput.style.display = 'block';
-
-      summaryOutput.innerHTML = `
-        <section class="summary-block">
-          <h3>1. Overall Pattern Summary</h3>
-          ${badge(suspicion.text, suspicion.cls)}
-          <p>The patient reports <strong>${triadCount}</strong> of the 3 core pain features: period pain, pelvic pain outside menstruation, and pain during or after sex. Average pain falls in the <strong>${severityLabel(avgPain).toLowerCase()}</strong> range.</p>
-        </section>
-
-        <section class="summary-block">
-          <h3>2. Likely Symptom Cluster</h3>
-          ${badge(cluster.name, cluster.cls)}
-          <p>${cluster.detail}</p>
-        </section>
-
-        <section class="summary-block">
-          <h3>3. Symptom Detail Snapshot</h3>
-          <ul class="score-list">
-            <li><strong>Period pain:</strong> ${['No', 'Mild', 'Moderate', 'Severe'][data.q1]}</li>
-            <li><strong>Pelvic pain outside period:</strong> ${['No', 'Occasional', 'Frequent', 'Constant'][data.q2]}</li>
-            <li><strong>Pain during or after sex:</strong> ${['No', 'Mild', 'Moderate', 'Severe'][data.q3]}</li>
-            <li><strong>Heavy or irregular bleeding:</strong> ${['No', 'Sometimes', 'Often', 'Always'][data.q5]}</li>
-            <li><strong>Bleeding between periods:</strong> ${['No', 'Occasionally', 'Frequently'][data.q6]}</li>
-            <li><strong>Digestive symptoms:</strong> ${['No', 'Mild', 'Moderate', 'Severe'][data.q7]}</li>
-            <li><strong>Bowel pain:</strong> ${['No', 'Occasionally', 'Frequently'][data.q8]}</li>
-            <li><strong>Urination pain:</strong> ${['No', 'Occasionally', 'Frequently'][data.q9]}</li>
-            <li><strong>Fatigue or weakness:</strong> ${['No', 'Mild', 'Moderate', 'Severe'][data.q10]}</li>
-            <li><strong>Symptoms worsen around period:</strong> ${['No', 'Slightly', 'Significantly'][data.q11]}</li>
-            <li><strong>Cramping severity:</strong> ${['No', 'Mild', 'Moderate', 'Severe'][data.q12]}</li>
-          </ul>
-        </section>
-
-        <section class="summary-block">
-          <h3>4. Progression Pattern</h3>
-          ${badge(progressionLabel(data.q13), 'info')}
-          <p><strong>Symptom duration:</strong> ${['Less than 1 year', '1–3 years', '3–7 years', '7+ years'][data.q14]}</p>
-          <p>${progressionNote}</p>
-        </section>
-
-        <section class="summary-block">
-          <h3>5. Functional Impact</h3>
-          ${badge(functionalImpactText, impactScore >= 7 ? 'high' : impactScore >= 3 ? 'medium' : 'low')}
-          <ul class="score-list">
-            <li><strong>Impact on work or school:</strong> ${['Rarely', 'Sometimes', 'Often', 'Almost always'][data.q17]}</li>
-            <li><strong>Impact on social life:</strong> ${['Rarely', 'Sometimes', 'Often', 'Almost always'][data.q18]}</li>
-            <li><strong>Impact on physical activity:</strong> ${['No', 'Slightly', 'Moderately', 'Severely'][data.q19]}</li>
-            <li><strong>Sleep interference:</strong> ${['No', 'Occasionally', 'Frequently'][data.q20]}</li>
-          </ul>
-        </section>
-
-        <section class="summary-block">
-          <h3>6. Mental Health Impact</h3>
-          ${badge(mh.text, mh.cls)}
-          <ul class="score-list">
-            <li><strong>Feeling down, depressed, or hopeless:</strong> ${['No', 'Occasionally', 'Frequently'][data.q15]}</li>
-            <li><strong>Anxiety related to symptoms:</strong> ${['No', 'Mild', 'Moderate', 'Severe'][data.q16]}</li>
-          </ul>
-        </section>
-
-        <section class="summary-block">
-          <h3>7. Suggested Clinical Framing</h3>
-          <p>This questionnaire shows a <strong>${suspicion.text.toLowerCase()}</strong> for an endometriosis-like symptom pattern. The results are most consistent with a <strong>${cluster.name.toLowerCase()}</strong>. This summary is intended to support clinical review and patient communication rather than diagnosis.</p>
-        </section>
-      `;
     });
 
     resetBtn.addEventListener('click', function () {
@@ -714,11 +571,50 @@
       summaryOutput.style.display = 'none';
       summaryOutput.innerHTML = '';
       summaryPlaceholder.style.display = 'block';
+      printContainer.innerHTML = '';
+      document.body.classList.remove('printing-report');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    window.addEventListener('afterprint', function () {
+      document.body.classList.remove('printing-report');
+    });
+
     printBtn.addEventListener('click', function () {
-      window.print();
+      const answeredQuestions = [];
+      document.querySelectorAll('.question').forEach(q => {
+        const legend = q.querySelector('legend')?.textContent?.trim() || 'Question';
+        const selected = q.querySelector('input:checked');
+        const answer = selected ? selected.parentElement.textContent.trim() : 'No answer selected';
+        answeredQuestions.push(`<li><strong>${legend}</strong><br>Answer: ${answer}</li>`);
+      });
+
+      const summaryHtml = summaryOutput.innerHTML && summaryOutput.style.display !== 'none'
+        ? summaryOutput.innerHTML
+        : '<section class="summary-block"><h3>Doctor-Ready Summary</h3><p>No summary has been generated yet. Select <strong>Generate Summary</strong> before printing if you want the clinical summary included.</p></section>';
+
+      printContainer.innerHTML = `
+        <div class="print-report">
+          <h1>Endometriosis Pattern Summary Report</h1>
+          <p>This report is intended to organize symptom information for clinical discussion. It is not a diagnosis.</p>
+          <h2>Doctor-Ready Summary</h2>
+          ${summaryHtml}
+          <h2>Questionnaire Responses</h2>
+          <ul class="questions-list">${answeredQuestions.join('')}</ul>
+        </div>
+      `;
+
+      document.body.classList.add('printing-report');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          try {
+            window.print();
+          } catch (err) {
+            document.body.classList.remove('printing-report');
+            alert('Printing could not be opened in this browser preview. Open the saved HTML file or your GitHub Pages site in a normal browser tab and try again.');
+          }
+        });
+      });
     });
   </script>
 </body>
